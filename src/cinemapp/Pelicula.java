@@ -10,13 +10,13 @@ package cinemapp;
  * @author MSI PC
  */
 public class Pelicula {
-    private double duracion;
+    
+    private Horario[] horarios;
+private double duracion;
     private String nombre;
     private String genero;
     private String sala;
      private int N;
-    private Horario[] horarios;
-
     public Pelicula(String nombre,String sala) {
         this.nombre = nombre;
         this.sala = sala;
