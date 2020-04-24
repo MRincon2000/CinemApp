@@ -23,8 +23,11 @@ private double duracion;
         this.nombre = nombre;
         this.sala = sala;
         this.next=null;
+        int hora=9;
         for(int i=0;i<7;i++){
-           
+           HorarioLinked h=new HorarioLinked(hora);
+           this.insert(h);
+           hora=hora+2;
         }
     }
     
@@ -50,7 +53,7 @@ while(ptr!=null){
     inserted=true;
  }
  else if(prev==null){
-     head.setNext(hora);
+     head=hora;
      inserted=true;
  }
 
@@ -84,7 +87,18 @@ if(found){
 return deleted;
 }
     
-    
+ public HorarioLinked BuscarHorario(int hora){
+     HorarioLinked ptr=head;
+     
+     while(ptr!=null){
+         if(ptr.getHorario()==hora){
+             break;
+         }
+         ptr=ptr.getNext();
+     }
+     return ptr;
+     
+ }   
     
     
     

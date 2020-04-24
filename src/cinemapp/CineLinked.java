@@ -38,7 +38,7 @@ if(!repetido){
     prev.setNext(peli);
  }
  else if(prev==null){
-     head.setNext(peli);
+     head=peli;
  }
 }else{
     System.out.println("La pelicula ya se encuentra en el inventario");
@@ -72,6 +72,24 @@ if(found){
 
 return deleted;
 }
+
+public PeliculaLinked BuscarPeli(String nombre){
+    PeliculaLinked ptr=head;
+    boolean found=false;
+    while(ptr!=null){
+        if(ptr.getNombre().equals(nombre)){
+            found=true;
+            break;
+        }
+        ptr=ptr.getNext();
+    }
+    
+return ptr;
+}
+
+
+
+
 
 public void printRecursive() {
 System.out.print("List Recursive: ");
