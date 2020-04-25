@@ -17,9 +17,9 @@ private double duracion;
     private String genero;
     private String sala;
      private int N;
-    public Pelicula(String nombre,String sala) {
+    public Pelicula(String nombre) {
         this.nombre = nombre;
-        this.sala = sala;
+
         this.N = 7;
         this.horarios= new Horario[N];
         int hora= 9;

@@ -5,6 +5,9 @@
  */
 package cinemapp;
 
+import java.util.*;
+
+
 /**
  *
  * @author MSI PC
@@ -14,33 +17,99 @@ public class CinemApp {
     /**
      * @param args the command line arguments
      */
+   public static Random aleatorio = new Random(System.currentTimeMillis());
     public static void main(String[] args) {
         // TODO code application logic here
- CineLinked cinepolis=new CineLinked();      
-   PeliculaLinked p= new PeliculaLinked("Narutin","Sala 1") ;
- cinepolis.insert(p);
 
-try{
-    System.out.println(cinepolis.BuscarPeli("Narut").getSala());
-}catch(NullPointerException e){
-    System.out.println("No se ecuentra la peli");
+        Cine cineco=new Cine(1400);
+        
+        for(int i=0;i<1400;i++){
+Pelicula P=new Pelicula(NombrePelicula());
+cineco.insertar(P);
+for(int u=0;u<7;u++){
+    for (int o=0;o<100;o++){
+        cineco.getPeliculas()[i].getHorarios()[u].ComprarSilla(NombrePersona(), o);
+    }
 }
-    System.out.println(cinepolis.BuscarPeli("Narutin").getSala());
+        }
+for(int i=0;i<1400;i++){
+for(int u=0;u<7;u++){
 
-  
-    
-    try{  
-    
-    cinepolis.BuscarPeli("Narutin").BuscarHorario(15).ComprarSilla("Ronalt el Killa", 9);
-    cinepolis.BuscarPeli("Narutin").BuscarHorario(15).MostrarDisponibles();
-    cinepolis.BuscarPeli("Narutin").BuscarHorario(15).MostrarTodas();
-    
-  }catch(NullPointerException l){
-      System.out.println("No se ecuentra el horario");
-  }
-   
-   
-   
-   
+  cineco.getPeliculas()[i].getHorarios()[u].MostrarTodas();
 }
+}        
+    
+for(int h=0;h<200;h++){
+    cineco.eliminar(cineco.getPeliculas()[4].getNombre());
+    
+}      
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+public static String NombrePersona(){
+String[] Nombre={"Miguel","Nicolas","Rodrigo","Angel","Deolan","Julian","Andres","Juan","Jose","Luis","Maria","Guadalupe","Francisco","Juana","Antonio","Jesus","Pedro","Alejandro","Manuel","Margarita","Carlos","Roberto","Fernando","Daniel","Jorge","Ricardo","Eduardo","Javier","Rafael","Martin","Raul","David","Marco","Arturo","Veronica"};
+//35
+String[] Apellido={"Gonzales","Rodriguez","Gomez","Fernandez","Lopez","Diaz","Martines","Perez","Garcia","Sanchez","Romero","Torres","Alvarez","Ruiz","Ramirez","Florez","Benitez","Acosta","Medina","Herrera","Suarez","Aguirre","Jimenez","Gutierrez","Pereira","Rojas","Molina","Castro","Ortiz","Silva","Nunez","Cabrera","Morales","Moreno","Vera"};   
+ 
+
+
+int intaleatorio = aleatorio.nextInt(Nombre.length);
+int intaleatorio1 = aleatorio.nextInt(Nombre.length);
+
+
+String resultado=Nombre[intaleatorio]+" "+Apellido[intaleatorio1];
+
+
+aleatorio.setSeed(aleatorio.nextLong());
+
+
+ return   resultado; 
+}
+ 
+ 
+
+public static String NombrePelicula(){
+     
+     
+     String[] Sustantivos = {"Amor","Lobo","Camino","Edificio","Elevador","Paso","Hombre","Barco","Piano","Policia","Soldado","Tigre","Leon","Coyote","Carro","Tren","Avion","Ingeniero","Doctor","Presidente","Violin","Sacerdote","Globo","Payaso","Saxofon","Nino","Motociclista","Espectro","Angel","Fotografo","Pintor","Orfanato","Abogado","Capitan","Zapato"};
+     
+     String[] Adjetivos ={"Nocturno","Esquizofrenico","Rojo","Embrujado","Millonario","Mentiroso","Asustadizo","Enamorado","Corrupto","Paraco","Mamerto","Guerrillo","Veneco","Valiente","Magico","Barato","Invisible","Genio","Malvado","Azul","Negro","Asesino","Bonito","Feo","Futbolista","Borracho","Estafador","Apostador","Sonador","Triste","Feliz","Decapitado"};
+ 
+ int intaleatorio = aleatorio.nextInt(Sustantivos.length);
+int intaleatorio1 = aleatorio.nextInt(Adjetivos.length);
+
+
+String resultado="El " + Sustantivos[intaleatorio]+" "+Adjetivos[intaleatorio1];
+
+
+aleatorio.setSeed(aleatorio.nextLong());
+
+
+ return   resultado; 
+ 
+ 
+ 
+}
+    
+    
+    
+    
 }
