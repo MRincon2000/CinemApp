@@ -21,31 +21,49 @@ public class CinemApp {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Cine cineco=new Cine(1400);
-        
-        for(int i=0;i<1400;i++){
+     /*   Cine cineco=new Cine(14286);
+    
+ int contador=0;
+      
+ for(int i=0;i<14286;i++){
+     boolean logrado=false;
 Pelicula P=new Pelicula(NombrePelicula());
-cineco.insertar(P);
+System.out.println(P.getNombre());
+logrado=cineco.insertar(P);
+if(logrado){
+    contador++;
 for(int u=0;u<7;u++){
     for (int o=0;o<100;o++){
-        cineco.getPeliculas()[i].getHorarios()[u].ComprarSilla(NombrePersona(), o);
+        cineco.getPeliculas()[contador-1].getHorarios()[u].ComprarSilla(NombrePersona(), o);
     }
 }
-        }
-for(int i=0;i<1400;i++){
-for(int u=0;u<7;u++){
+ }
+ }
+      
+cineco.output();
+   
+for(int h=0;h<5000;h++){
+   for(int s=0;s<7;s++){
+    for (int d=0;d<100;d++){
+        cineco.getPeliculas()[h].getHorarios()[s].CancelarCompra(d); 
+}     
+   }
+}
+  
+int numeroP=1;
 
+for(int i=0;i<cineco.getCount();i++){
+    System.out.print("Pelicula ");
+    System.out.println(numeroP);
+    numeroP++;
+for(int u=0;u<7;u++){
+    System.out.print("Sala ");
+    System.out.println(u+1);
   cineco.getPeliculas()[i].getHorarios()[u].MostrarTodas();
 }
-}        
-    
-for(int h=0;h<200;h++){
-    cineco.eliminar(cineco.getPeliculas()[4].getNombre());
-    
 }      
     
-    
-   
+ cineco.output();*/
     
     
     
@@ -54,17 +72,7 @@ for(int h=0;h<200;h++){
     
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-public static String NombrePersona(){
+   public static String NombrePersona(){
 String[] Nombre={"Miguel","Nicolas","Rodrigo","Angel","Deolan","Julian","Andres","Juan","Jose","Luis","Maria","Guadalupe","Francisco","Juana","Antonio","Jesus","Pedro","Alejandro","Manuel","Margarita","Carlos","Roberto","Fernando","Daniel","Jorge","Ricardo","Eduardo","Javier","Rafael","Martin","Raul","David","Marco","Arturo","Veronica"};
 //35
 String[] Apellido={"Gonzales","Rodriguez","Gomez","Fernandez","Lopez","Diaz","Martines","Perez","Garcia","Sanchez","Romero","Torres","Alvarez","Ruiz","Ramirez","Florez","Benitez","Acosta","Medina","Herrera","Suarez","Aguirre","Jimenez","Gutierrez","Pereira","Rojas","Molina","Castro","Ortiz","Silva","Nunez","Cabrera","Morales","Moreno","Vera"};   

@@ -43,42 +43,45 @@ public class Cine {
 public boolean insertar(Pelicula peli){
     boolean inserted=false;
     if(!full()){
-        if(!search(peli.getNombre())){
-            for(int e=count;e>posicion;e--){
-                peliculas[e]=peliculas[e-1];
-            }
-            peliculas[posicion]=peli;
+        //if(!search(peli.getNombre())){
+            peliculas[count]=peli;
             count++;
             inserted=true;
-        }
-        else{
-            System.out.println("Pelicula repetida");
-        }
+        //}
+        //else{
+        //    System.out.println("Pelicula repetida");
+       // }
     }
     else System.out.println("Inventario de peliculas lleno");
     return inserted;
 }
 private boolean search(String nombre){
     boolean found=false;
-    boolean stop=false;
+
     posicion=0;
-    while(posicion<count && !stop){
+    while(posicion<count){
         
-            if(peliculas[posicion].getNombre()==nombre){
+            if(peliculas[posicion].getNombre().equals(nombre)){
                 found=true;
+                break;
             }
-        else{
+ 
         posicion++;
-    }
+    
     }
     return found;
 }
+
+
 public void output(){
-    System.out.print("Lista: ");
+    System.out.println("Lista: ");
     int g=0;
     while(g!=count){
-        System.out.print(peliculas[g]);
+        System.out.print("Pelicula ");
+        System.out.print(g+1);
         System.out.print(" ");
+        System.out.println(peliculas[g].getNombre());
+
         g++;
     }
     System.out.println();
@@ -91,6 +94,14 @@ public void output(){
 
     public void setPeliculas(Pelicula[] peliculas) {
         this.peliculas = peliculas;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
 }

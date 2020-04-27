@@ -64,4 +64,8 @@ public class Horario{
         this.sillas[numero].setCliente(nombre);
         this.sillas[numero].setOcupado(true);
     }
+    public void CancelarCompra(int numero){
+        this.sillas[numero].setCliente("");
+        this.sillas[numero].setOcupado(false);
+    }
 }
