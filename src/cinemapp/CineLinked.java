@@ -24,10 +24,10 @@ ptr = head;
 prev = null;
 boolean repetido= false;
 while(ptr!=null){
-    if(ptr.getNombre()==peli.getNombre()){
+  /*  if(ptr.getNombre()==peli.getNombre()){
         repetido=true;
         break;
-    }   
+    } */  
     prev=ptr;
     ptr=ptr.getNext();
 }
@@ -99,8 +99,27 @@ System.out.println();
 
 private void printR(PeliculaLinked p) {
 if(p != null) {
-System.out.print(p.getNombre()+" ");
+System.out.println(p.getNombre());
 printR(p.getNext());
 }
 }
+
+    public PeliculaLinked getHead() {
+        return head;
+    }
+
+    public void setHead(PeliculaLinked head) {
+        this.head = head;
+    }
+
+   public void print(){
+       PeliculaLinked ptr=this.head;
+       while(ptr!=null){
+           System.out.println(ptr.getNombre());
+           ptr=ptr.getNext();
+       }
+       
+   } 
+    
+   
 }

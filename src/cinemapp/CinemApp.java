@@ -21,7 +21,69 @@ public class CinemApp {
     public static void main(String[] args) {
         // TODO code application logic here
 
-     /*   Cine cineco=new Cine(14286);
+    CineLinked cineco=new CineLinked();
+
+
+    
+ 
+     for(int i=0;i<10;i++){
+     boolean logrado=false;
+     PeliculaLinked P=new PeliculaLinked(NombrePelicula());
+     logrado=cineco.insert(P);
+     
+     if(logrado){
+     int hora=9;
+    for(int p=0;p<7;p++){
+        for(int m=0;m<100;m++){
+        P.BuscarHorario(hora).ComprarSilla(NombrePersona(),m);
+        }
+        hora=hora+2;
+    }
+    }
+    }
+     cineco.print();
+     /*for(int b=0;b<200;b++){
+         cineco.delete(cineco.getHead().getNext().getNext().getNext().getNombre());
+     }*/
+     
+     
+     PeliculaLinked ptrP1=cineco.getHead();
+     for(int w=0;w<5;w++){
+     HorarioLinked ptrH1=ptrP1.getHead();
+     while(ptrH1!=null){
+         for(int y=0;y<100;y++){
+            ptrH1.CancelarCompra(y); 
+         }
+         ptrH1=ptrH1.getNext();
+     }
+     ptrP1=ptrP1.getNext();
+     }
+     
+    
+     PeliculaLinked ptrP=cineco.getHead();
+     int contadorP=0;
+     while(ptrP!=null){
+         System.out.print("Pelicula ");
+         System.out.println(contadorP+1);
+        HorarioLinked ptrH=ptrP.getHead();
+        int contador1=0;
+        while(ptrH!=null){
+            System.out.print("Horario ");
+            System.out.println(contador1+1);
+            ptrH.MostrarTodas();
+            ptrH=ptrH.getNext();
+            contador1++;
+        }
+        ptrP=ptrP.getNext();
+        contadorP++;    
+     }
+        
+     
+        
+        
+        
+        
+        /*   Cine cineco=new Cine(14286);
     
  int contador=0;
       

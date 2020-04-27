@@ -19,9 +19,9 @@ private double duracion;
     private HorarioLinked head;
 
 
-    public PeliculaLinked(String nombre, String sala) {
+    public PeliculaLinked(String nombre) {
         this.nombre = nombre;
-        this.sala = sala;
+       
         this.next=null;
         int hora=9;
         for(int i=0;i<7;i++){
@@ -142,6 +142,14 @@ return deleted;
 
     public void setSala(String sala) {
         this.sala = sala;
+    }
+
+    public HorarioLinked getHead() {
+        return head;
+    }
+
+    public void setHead(HorarioLinked head) {
+        this.head = head;
     }
 
     
