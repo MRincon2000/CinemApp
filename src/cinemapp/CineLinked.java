@@ -11,9 +11,11 @@ package cinemapp;
  */
 public class CineLinked {
      private PeliculaLinked head;
+     private int count;
 
     public CineLinked() {
    this.head=null;
+   this.count=0;
     }
 public boolean insert(PeliculaLinked peli) {
 boolean inserted;
@@ -40,6 +42,7 @@ if(!repetido){
  else if(prev==null){
      head=peli;
  }
+ count++;
 }else{
     System.out.println("La pelicula ya se encuentra en el inventario");
 }
@@ -66,12 +69,38 @@ if(found){
     else if(prev==null){
         head=ptr.getNext();
     }
+    count--;
 }else{
     System.out.println("La pelicula no se encuentra en el inventario");
 }
 
 return deleted;
 }
+
+public boolean deleteIndex(int indice){
+    boolean eliminado=false;
+    PeliculaLinked ptr=this.head;
+    PeliculaLinked prev=null;
+   if(indice<count && ptr!=null){
+       for(int j=0;j<indice;j++){
+           prev=ptr;
+           ptr=ptr.getNext();
+    }
+      eliminado=true;
+       if(prev!=null){
+           prev.setNext(ptr.getNext());
+       }
+       else if(prev==null){
+           head=ptr.getNext();
+       }
+       count--;
+   }else{
+       System.out.println("El indice no existe");
+   }
+    
+    return eliminado;
+}
+
 
 public PeliculaLinked BuscarPeli(String nombre){
     PeliculaLinked ptr=head;
@@ -114,12 +143,26 @@ printR(p.getNext());
 
    public void print(){
        PeliculaLinked ptr=this.head;
+       int contador=0;
+       System.out.println("Lista:");
        while(ptr!=null){
+           System.out.print("Pelicula ");
+           System.out.print(contador+1);
+           System.out.print(": ");
            System.out.println(ptr.getNombre());
            ptr=ptr.getNext();
+           contador++;
        }
        
    } 
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
     
    
 }

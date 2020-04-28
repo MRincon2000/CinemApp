@@ -21,12 +21,16 @@ public class CinemApp {
     public static void main(String[] args) {
         // TODO code application logic here
 
-    CineLinked cineco=new CineLinked();
+    
+      /*  
+        //CREAR DATOS LINKED
+        
+        CineLinked cineco=new CineLinked();
 
 
     
  
-     for(int i=0;i<10;i++){
+     for(int i=0;i<14286;i++){
      boolean logrado=false;
      PeliculaLinked P=new PeliculaLinked(NombrePelicula());
      logrado=cineco.insert(P);
@@ -41,14 +45,22 @@ public class CinemApp {
     }
     }
     }
-     cineco.print();
-     /*for(int b=0;b<200;b++){
-         cineco.delete(cineco.getHead().getNext().getNext().getNext().getNombre());
-     }*/
      
+     //MOSTRAR PELICULAS LINKED
+     //cineco.print();
+    
+     //ELIMINAR PELICULAS POR INDICE LINKED
+     
+     for(int b=0;b<10000;b++){ 
+     cineco.deleteIndex(aleatorio.nextInt(cineco.getCount()));
+     aleatorio.setSeed(aleatorio.nextLong());
+     }
+     
+     
+     //ELIMINAR SILLA POR SILLA DE LAS PELICULAS LINKED
      
      PeliculaLinked ptrP1=cineco.getHead();
-     for(int w=0;w<5;w++){
+     for(int w=0;w<10000;w++){
      HorarioLinked ptrH1=ptrP1.getHead();
      while(ptrH1!=null){
          for(int y=0;y<100;y++){
@@ -57,10 +69,12 @@ public class CinemApp {
          ptrH1=ptrH1.getNext();
      }
      ptrP1=ptrP1.getNext();
-     }
+     }*/
      
     
-     PeliculaLinked ptrP=cineco.getHead();
+     //IMPRIMIR CADA SILLA DE LAS PELICULAS LINKED
+     
+     /*PeliculaLinked ptrP=cineco.getHead();
      int contadorP=0;
      while(ptrP!=null){
          System.out.print("Pelicula ");
@@ -76,21 +90,23 @@ public class CinemApp {
         }
         ptrP=ptrP.getNext();
         contadorP++;    
-     }
+     }*/
         
      
         
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+     
+    
+    // CREAR DATOS ARRAY
         
-        
-        
-        /*   Cine cineco=new Cine(14286);
+ Cine cineco=new Cine(14286);
     
  int contador=0;
       
  for(int i=0;i<14286;i++){
      boolean logrado=false;
 Pelicula P=new Pelicula(NombrePelicula());
-System.out.println(P.getNombre());
 logrado=cineco.insertar(P);
 if(logrado){
     contador++;
@@ -101,9 +117,24 @@ for(int u=0;u<7;u++){
 }
  }
  }
-      
+
+
+ for(int v=0;v<10000;v++){
+     cineco.eliminarIndice(aleatorio.nextInt(cineco.getCount()));
+     aleatorio.setSeed(aleatorio.nextLong());
+ }
+ 
+ 
+ /*
+
+ //MOSTRAR PELICULAS ARRAY
+    
 cineco.output();
+
    
+    
+    // ELIMINAR SILLA POR SILLA DE LAS PELICULAS ARRAY
+    
 for(int h=0;h<5000;h++){
    for(int s=0;s<7;s++){
     for (int d=0;d<100;d++){
@@ -112,6 +143,8 @@ for(int h=0;h<5000;h++){
    }
 }
   
+    //MOSTRAR TODAS LAS SILLAS DE LAS PELICULAS ARRAY
+    
 int numeroP=1;
 
 for(int i=0;i<cineco.getCount();i++){
@@ -119,14 +152,12 @@ for(int i=0;i<cineco.getCount();i++){
     System.out.println(numeroP);
     numeroP++;
 for(int u=0;u<7;u++){
-    System.out.print("Sala ");
+    System.out.print("Horario ");
     System.out.println(u+1);
   cineco.getPeliculas()[i].getHorarios()[u].MostrarTodas();
 }
 }      
-    
- cineco.output();*/
-    
+  */  
     
     
     

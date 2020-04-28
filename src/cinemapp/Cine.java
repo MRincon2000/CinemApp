@@ -32,6 +32,7 @@ public class Cine {
                 for(int u=posicion;u<count-1;u++){
                     peliculas[u]=peliculas[u+1];
                 }
+                peliculas[count-1]=null;
                     count--;
                     deleted=true;
                 
@@ -79,7 +80,7 @@ public void output(){
     while(g!=count){
         System.out.print("Pelicula ");
         System.out.print(g+1);
-        System.out.print(" ");
+        System.out.print(": ");
         System.out.println(peliculas[g].getNombre());
 
         g++;
@@ -103,7 +104,23 @@ public void output(){
     public void setCount(int count) {
         this.count = count;
     }
-
+    public boolean eliminarIndice(int indice){
+       boolean deleted=false;
+     
+       if(indice<count && !empty()){
+         
+        for(int r=indice;r<count-1;r++){
+            peliculas[r]=peliculas[r+1];
+                }
+                peliculas[count-1]=null;
+                    count--;
+                    deleted=true;
+        
+       }else{
+           System.out.println("El indice no existe");
+       }
+       return deleted;
+    }
 }
 
 
