@@ -117,7 +117,7 @@ for(int u=0;u<7;u++){
 }
  }
  }
-
+// ELIMINAR PELICULAS ARRAY
 
  for(int v=0;v<10000;v++){
      cineco.eliminarIndice(aleatorio.nextInt(cineco.getCount()));
