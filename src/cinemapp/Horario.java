@@ -61,11 +61,19 @@ public class Horario{
         }
     }
     public void ComprarSilla(String nombre,int numero){
+      if(!this.sillas[numero].isOcupado()){
         this.sillas[numero].setCliente(nombre);
         this.sillas[numero].setOcupado(true);
+      }else{
+          System.out.println("La silla ya se encuentra ocupada");
+      }
     }
     public void CancelarCompra(int numero){
-        this.sillas[numero].setCliente("");
+        if(this.sillas[numero].isOcupado()){
+         this.sillas[numero].setCliente("");
         this.sillas[numero].setOcupado(false);
+       }else{
+           System.out.println("La silla no se encuentra ocupada");
+       }
     }
 }

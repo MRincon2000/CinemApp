@@ -18,19 +18,28 @@ public class CinemApp {
      * @param args the command line arguments
      */
    public static Random aleatorio = new Random(System.currentTimeMillis());
+   static long tiempoInicial;
+   static long tiempoFinal;
+   static int datos;
+   static int datosE;
     public static void main(String[] args) {
         // TODO code application logic here
 
     
-      /*  
+        datos=14286;
+        datosE=datos/2;
+        
+        tiempoInicial=System.nanoTime();
+      
         //CREAR DATOS LINKED
         
+     
         CineLinked cineco=new CineLinked();
 
 
     
  
-     for(int i=0;i<14286;i++){
+     for(int i=0;i<datos;i++){
      boolean logrado=false;
      PeliculaLinked P=new PeliculaLinked(NombrePelicula());
      logrado=cineco.insert(P);
@@ -50,13 +59,13 @@ public class CinemApp {
      //cineco.print();
     
      //ELIMINAR PELICULAS POR INDICE LINKED
-     
-     for(int b=0;b<10000;b++){ 
+     /*
+     for(int b=0;b<datosE;b++){ 
      cineco.deleteIndex(aleatorio.nextInt(cineco.getCount()));
      aleatorio.setSeed(aleatorio.nextLong());
-     }
+     }*/
      
-     
+     /*
      //ELIMINAR SILLA POR SILLA DE LAS PELICULAS LINKED
      
      PeliculaLinked ptrP1=cineco.getHead();
@@ -74,7 +83,7 @@ public class CinemApp {
     
      //IMPRIMIR CADA SILLA DE LAS PELICULAS LINKED
      
-     /*PeliculaLinked ptrP=cineco.getHead();
+     PeliculaLinked ptrP=cineco.getHead();
      int contadorP=0;
      while(ptrP!=null){
          System.out.print("Pelicula ");
@@ -90,7 +99,7 @@ public class CinemApp {
         }
         ptrP=ptrP.getNext();
         contadorP++;    
-     }*/
+     }
         
      
         
@@ -99,12 +108,12 @@ public class CinemApp {
      
     
     // CREAR DATOS ARRAY
-        
- Cine cineco=new Cine(14286);
+       
+ /*Cine cineco=new Cine(datos);
     
  int contador=0;
       
- for(int i=0;i<14286;i++){
+ for(int i=0;i<datos;i++){
      boolean logrado=false;
 Pelicula P=new Pelicula(NombrePelicula());
 logrado=cineco.insertar(P);
@@ -116,14 +125,14 @@ for(int u=0;u<7;u++){
     }
 }
  }
- }
+ }*/
 // ELIMINAR PELICULAS ARRAY
-
- for(int v=0;v<10000;v++){
+/*
+ for(int v=0;v<datosE;v++){
      cineco.eliminarIndice(aleatorio.nextInt(cineco.getCount()));
      aleatorio.setSeed(aleatorio.nextLong());
  }
- 
+ */
  
  /*
 
@@ -141,11 +150,11 @@ for(int h=0;h<5000;h++){
         cineco.getPeliculas()[h].getHorarios()[s].CancelarCompra(d); 
 }     
    }
-}
+}*/
   
     //MOSTRAR TODAS LAS SILLAS DE LAS PELICULAS ARRAY
     
-int numeroP=1;
+/*int numeroP=1;
 
 for(int i=0;i<cineco.getCount();i++){
     System.out.print("Pelicula ");
@@ -156,12 +165,22 @@ for(int u=0;u<7;u++){
     System.out.println(u+1);
   cineco.getPeliculas()[i].getHorarios()[u].MostrarTodas();
 }
-}      
-  */  
+}  */    
+  
+    
+    tiempoFinal=System.nanoTime();
+   
+        
+    System.out.print("Creacion de ");
+              System.out.print(datos*700); 
+                System.out.print(" datos");
+                System.out.print(" y acceso a ");
+                System.out.println(" los datos linked");
+    
+    System.out.print("Tiempo de ejecucion en s: ");
     
     
-    
-    
+   System.out.println((double)(tiempoFinal-tiempoInicial)/1000000000);
     
     }
     
