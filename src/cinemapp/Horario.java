@@ -76,4 +76,13 @@ public class Horario{
            System.out.println("La silla no se encuentra ocupada");
        }
     }
+
+    public Silla[] getSillas() {
+        return sillas;
+    }
+
+    public void setSillas(Silla[] sillas) {
+        this.sillas = sillas;
+    }
+    
 }

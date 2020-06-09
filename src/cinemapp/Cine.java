@@ -72,7 +72,15 @@ private boolean search(String nombre){
     }
     return found;
 }
-
+public int searchP(String nombre){
+  boolean found=  this.search(nombre);
+    if(found==true){
+        return this.posicion;
+    }
+    else{
+        return -1;
+    }
+}
 
 public void output(){
     System.out.println("Lista: ");
